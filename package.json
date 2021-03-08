@@ -1,0 +1,59 @@
+{
+	"name": "crypto-wallet",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "webpack serve --mode development --env development --hot",
+		"bundle": "webpack",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"server": "node server"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/shahidaltaf/crypto-wallet.git"
+	},
+	"keywords": [],
+	"author": "Shahid Altaf",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/shahidaltaf/crypto-wallet/issues"
+	},
+	"homepage": "https://github.com/shahidaltaf/crypto-wallet#readme",
+	"dependencies": {
+		"bootstrap": "^4.6.0",
+		"cors": "^2.8.5",
+		"css-loader": "^5.1.1",
+		"ether-converter": "^0.0.13",
+		"ethereumjs-units": "^0.2.0",
+		"express": "^4.17.1",
+		"moment": "^2.29.1",
+		"react": "^17.0.1",
+		"react-bootstrap": "^1.5.1",
+		"react-dom": "^17.0.1",
+		"react-redux": "^7.2.2",
+		"redux": "^4.0.5",
+		"redux-thunk": "^2.3.0",
+		"satoshi-bitcoin": "^1.0.4",
+		"style-loader": "^2.0.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.13.8",
+		"@babel/preset-env": "^7.13.9",
+		"@babel/preset-react": "^7.12.13",
+		"@babel/preset-typescript": "^7.13.0",
+		"@types/react": "^17.0.3",
+		"@types/react-dom": "^17.0.1",
+		"@types/react-redux": "^7.1.16",
+		"@types/redux": "^3.6.0",
+		"@types/redux-thunk": "^2.1.0",
+		"awesome-typescript-loader": "^5.2.1",
+		"babel-loader": "^8.2.2",
+		"html-webpack-plugin": "^5.2.0",
+		"source-map-loader": "^2.0.1",
+		"typescript": "^4.2.3",
+		"webpack": "^5.24.3",
+		"webpack-cli": "^4.5.0",
+		"webpack-dev-server": "^3.11.2"
+	}
+}
