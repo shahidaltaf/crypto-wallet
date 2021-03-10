@@ -9,7 +9,7 @@ Made without `create-react-app`
 
 ## Getting started
 
-After cloning this repo, navigate to the root director and run `yarn server` to launch the API server on [http://localhost:8888].
+After cloning this repo, navigate to the root director and run `yarn server` to launch the API server on [http://localhost:8888]().
 
 To launch the web app, run `yarn start`. This will launch automatically in your default browser.
 
