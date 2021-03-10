@@ -1,6 +1,6 @@
 import * as actions from './actions';
 
-const initialState: TransactionsState = {
+const initialState: AppState = {
     filters: {
         coin: '',
         keyword: '',
@@ -10,8 +10,17 @@ const initialState: TransactionsState = {
     transactions: []
 }
 
-const storeReducer = (state: TransactionsState = initialState, action: Action) => {
+const storeReducer = (state: AppState = initialState, action: Action) => {
     switch (action.type) {
+
+        case actions.SET_FILTER_KEYWORD:
+            return {
+                ...state,
+                filters: {
+                    ...state.filters,
+                    keyword: action.payload
+                }
+            }
 
         case actions.SET_FILTER_COIN:
             return {
@@ -40,10 +49,11 @@ const storeReducer = (state: TransactionsState = initialState, action: Action) =
                 }
             }
 
-        case actions.SET_TX_DATA:
+        case actions.SET_TXS_DATA:
+            const sortedTxs = [...state.transactions, ...action.payload].sort((a:any, b:any) => Date.parse(b.date) - Date.parse(a.date));
             return {
                 ...state,
-                ...action.payload
+                transactions: sortedTxs
             };
 
         default:
