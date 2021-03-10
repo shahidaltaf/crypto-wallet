@@ -2,6 +2,8 @@ import moment from 'moment';
 import EtherConverter from 'ether-converter';
 import SatoshiBitcoin from 'satoshi-bitcoin';
 
+import { Action, ICustodialTx, INonCustodialTx, IPrices } from './types';
+
 export const SET_TXS_DATA = 'SET_TXS_DATA';
 export const SET_FILTER_KEYWORD = 'SET_FILTER_KEYWORD';
 export const SET_FILTER_COIN = 'SET_FILTER_COIN';
@@ -13,8 +15,8 @@ export const setFilterCoin = (value: string): Action => ({ type: SET_FILTER_COIN
 export const setFilterStatus = (value: string): Action => ({ type: SET_FILTER_STATUS, payload: value});
 export const setFilterType = (value: string): Action => ({ type: SET_FILTER_TYPE, payload: value});
 
-export const setCustodialData = (payload: ICustodialTx[], prices: IPrices) => {
-    const custodialTxs: ITransaction[] = payload.map(item => {
+export const setCustodialData = (payload: ICustodialTx[], prices: IPrices): Action => {
+    const custodialTxs = payload.map(item => {
         const pair = item.pair.split('-');
         const coinType = pair[0] === 'USD' ? pair[1] : pair[0];
         const fiat = parseFloat(item.fiatValue)
@@ -38,8 +40,8 @@ export const setCustodialData = (payload: ICustodialTx[], prices: IPrices) => {
     }
 }
 
-export const setBtcData = (payload: INonCustodialTx[], prices: IPrices) => {
-    const btcTxs: ITransaction[] = payload.map(item => {
+export const setBtcData = (payload: INonCustodialTx[], prices: IPrices): Action => {
+    const btcTxs = payload.map(item => {
         const bitcoinValue = SatoshiBitcoin.toBitcoin(item.amount);
         const fiatValue = bitcoinValue * prices.BTC;
 
@@ -61,8 +63,8 @@ export const setBtcData = (payload: INonCustodialTx[], prices: IPrices) => {
     }
 }
 
-export const setEthData = (payload: INonCustodialTx[], prices: IPrices) => {
-    const ethTxs: ITransaction[] = payload.map(item => {
+export const setEthData = (payload: INonCustodialTx[], prices: IPrices): Action => {
+    const ethTxs = payload.map(item => {
         const etherValue = EtherConverter(item.amount, 'wei', 'ether');
         const fiatValue = etherValue * prices.ETH;
 

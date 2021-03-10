@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { ServerResponse } from '../store/types';
 
 export const fetchTxData = () => {
     return new Promise<ServerResponse>((resolve, reject) => {

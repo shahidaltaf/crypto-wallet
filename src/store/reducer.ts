@@ -1,4 +1,5 @@
 import * as actions from './actions';
+import { Action, AppState } from './types';
 
 const initialState: AppState = {
     filters: {

@@ -3,12 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import moment from 'moment';
 import { Container, Table, Spinner } from 'react-bootstrap';
 
+import { AppState } from '../store/types';
 import { fetchTxData } from '../services/api';
 import * as actions from '../store/actions';
 import Header from '../components/Header';
 import Filters from '../components/Filters';
 
-const List: React.FC = () => {
+const List = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const dispatch = useDispatch();
     const filters = useSelector<AppState, AppState['filters']>(state => state.filters);

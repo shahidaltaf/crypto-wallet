@@ -1,8 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import * as actions from '../store/actions';
+import { AppState } from  '../store/types'
 
-import { Col, Form, Card } from 'react-bootstrap';
+import { Card, Col, Form } from 'react-bootstrap';
 
 const Filters = () => {
     const dispatch = useDispatch();
@@ -30,7 +31,7 @@ const Filters = () => {
                 <Col sm={12} md={6}>
                     <Form.Group controlId="filterSearch">
                         <Form.Label> Search</Form.Label>
-                        <Form.Control type="text" value={filters.keyword} placeholder="Keyword search for 'Description' fields" onChange={updateKeywordFilter} />
+                        <Form.Control type="text" value={filters.keyword} placeholder="Keyword search for 'Description' field" onChange={updateKeywordFilter} />
                     </Form.Group>
                     <Form.Group controlId="filterCoin">
                         <Form.Label>Coin</Form.Label>

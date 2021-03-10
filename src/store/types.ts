@@ -1,9 +1,9 @@
-type Action = {
+export type Action = {
     type: string
     payload: any
 }
 
-interface ITransaction {
+export interface ITransaction {
     to: string,
     from: string,
     amountFiat: string,
@@ -14,24 +14,24 @@ interface ITransaction {
     coin: string
 }
 
-interface IFilters {
+export interface IFilters {
     coin: string,
     keyword: string,
     status: string,
     type: string
 }
 
-type AppState = {
+export type AppState = {
     filters: IFilters,
     transactions: ITransaction[]
 }
 
-interface IPrices {
+export interface IPrices {
     BTC: number,
     ETH: number
 }
 
-interface INonCustodialTx {
+export interface INonCustodialTx {
     amount: number,
     blockHeight: string,
     data: string,
@@ -45,7 +45,7 @@ interface INonCustodialTx {
     type: string
 }
 
-interface ICustodialTx {
+export interface ICustodialTx {
     id: string,
     pair: string,
     state: string,
@@ -56,7 +56,7 @@ interface ICustodialTx {
     createdAt: string
 }
 
-type ServerResponse = {
+export type ServerResponse = {
     prices: IPrices,
     custodialTxs: ICustodialTx[],
     btcTxs: INonCustodialTx[],

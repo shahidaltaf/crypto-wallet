@@ -12,7 +12,8 @@ module.exports = env => {
         },
         devServer: {
             historyApiFallback: true,
-            hot: true
+            hot: true,
+            open: true
         },
         resolve: {
             extensions: ['.ts', '.tsx', '.js']

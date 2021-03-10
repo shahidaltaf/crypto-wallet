@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import List from './pages/List';
 
-const App: React.FC = () => {
+const App = () => {
     return <Router>
         <Switch>
             <Route exact path="/" component={List} />
